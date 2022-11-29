@@ -1,0 +1,16 @@
+.recipe {
+}
+
+.recipe .recipe-title {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.recipe .recipe-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
