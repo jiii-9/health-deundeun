@@ -8,6 +8,7 @@ import "./App.css";
 import Recipe from "./components/Recipe/Recipe";
 
 export const RecipeContext = React.createContext();
+
 function App() {
   const [recipeData, setRecipeData] = useState([]);
 
@@ -23,23 +24,27 @@ function App() {
   // };
 
   // Recipe data api
+
   const RECIPE_API_KEY = "ec08a6953db24a9dbfbb";
   const recipe_url = `http://openapi.foodsafetykorea.go.kr/api/${RECIPE_API_KEY}/COOKRCP01/json/1/100/RCP_NM="샐러드"`;
 
   useEffect(() => {
-    setTimeout(() => {
-      const getRecipeData = async () => {
-        const response = await fetch(recipe_url);
-        const data = await response.json();
-
-        setRecipeData(data);
-      };
-      getRecipeData();
-    }, 200);
+    fetchRecipeHandler();
   }, []);
 
+  const fetchRecipeHandler = async () => {
+    const response = await fetch(recipe_url);
+    const data = await response.json();
+    setRecipeData(data);
+  };
+
+  if (recipeData.length === 0) {
+    return null;
+  }
+  console.log(recipeData);
+
   return (
-    <RecipeContext.Provider value={recipeData}>
+    <RecipeContext.Provider value={{ recipeData }}>
       <div className="inner">
         <BrowserRouter>
           <Routes>

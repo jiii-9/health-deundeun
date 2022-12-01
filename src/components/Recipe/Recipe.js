@@ -4,11 +4,10 @@ import { RecipeContext } from "../../App";
 import classes from "./Recipe.module.css";
 import RecipeItem from "./RecipeItem";
 
-const Recipe = props => {
+const Recipe = () => {
   const recipeCtx = useContext(RecipeContext);
-  const recipes = recipeCtx.COOKRCP01.row;
 
-  console.log(recipeCtx.COOKRCP01.row);
+  const recipes = recipeCtx.recipeData.COOKRCP01.row;
 
   return (
     <section className={classes.recipe}>
