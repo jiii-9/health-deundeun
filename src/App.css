@@ -8,6 +8,14 @@ li {
   list-style: none;
 }
 
+span {
+  display: inline-block;
+}
+
+img {
+  display: block;
+}
+
 .inner {
   position: relative;
   width: 355px;

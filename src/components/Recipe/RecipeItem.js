@@ -1,15 +1,12 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import classes from "./RecipeItem.module.css";
 
 const RecipeItem = props => {
   return (
-    <Fragment>
-      <li className={classes["recipe-item"]}>
-        <img className={classes["recipe-image"]} src={`${props.mainImage}`} />
-        <span className={classes["recipe-name"]}>{props.name}</span>
-      </li>
-    </Fragment>
+    <li className={classes["recipe-item"]} onClick={props.onClick}>
+      {props.children}
+    </li>
   );
 };
 

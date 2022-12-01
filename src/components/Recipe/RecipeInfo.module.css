@@ -1,0 +1,19 @@
+.recipe {
+}
+
+.recipe .menu-name {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.recipe .menu-material {
+  margin-bottom: 40px;
+}
+
+.recipe .recipe-image {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.recipe .recipe-des {
+}

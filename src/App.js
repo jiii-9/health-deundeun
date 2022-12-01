@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainHeader from "./components/Layout/MainHeader";
-import SearchForm from "./components/Search/SearchForm";
+import Home from "./components/page/Home";
+import RecipeInfoPage from "./components/page/RecipeInfoPage";
 import Navigation from "./components/Layout/Navigation";
 
 import "./App.css";
-import Recipe from "./components/Recipe/Recipe";
+import MainHeader from "./components/Layout/MainHeader";
 
 export const RecipeContext = React.createContext();
 
@@ -35,7 +35,41 @@ function App() {
   const fetchRecipeHandler = async () => {
     const response = await fetch(recipe_url);
     const data = await response.json();
-    setRecipeData(data);
+    const transformedRecipe = data.COOKRCP01.row.map(recipe => {
+      return {
+        id: recipe.RCP_SEQ,
+        name: recipe.RCP_NM,
+        ingredient: recipe.RCP_PARTS_DTLS,
+        mainImage: recipe.ATT_FILE_NO_MAIN,
+        recipes: [
+          {
+            recipeImage: recipe.MANUAL_IMG01,
+            recipeDes: recipe.MANUAL01,
+          },
+          {
+            recipeImage: recipe.MANUAL_IMG02,
+            recipeDes: recipe.MANUAL02,
+          },
+          {
+            recipeImage: recipe.MANUAL_IMG03,
+            recipeDes: recipe.MANUAL03,
+          },
+          {
+            recipeImage: recipe.MANUAL_IMG04,
+            recipeDes: recipe.MANUAL04,
+          },
+          {
+            recipeImage: recipe.MANUAL_IMG05,
+            recipeDes: recipe.MANUAL05,
+          },
+          {
+            recipeImage: recipe.MANUAL_IMG06,
+            recipeDes: recipe.MANUAL06,
+          },
+        ],
+      };
+    });
+    setRecipeData(transformedRecipe);
   };
 
   if (recipeData.length === 0) {
@@ -47,14 +81,15 @@ function App() {
     <RecipeContext.Provider value={{ recipeData }}>
       <div className="inner">
         <BrowserRouter>
+          <MainHeader />
           <Routes>
-            <Route path="/" element={<MainHeader />} />
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/recipe/recipe-info/:RCP_NM"
+              element={<RecipeInfoPage />}
+            />
           </Routes>
         </BrowserRouter>
-        <main>
-          <SearchForm />
-          <Recipe />
-        </main>
       </div>
       <Navigation />
     </RecipeContext.Provider>
