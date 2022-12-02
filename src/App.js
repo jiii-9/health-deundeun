@@ -89,9 +89,9 @@ function App() {
               element={<RecipeInfoPage />}
             />
           </Routes>
+          <Navigation />
         </BrowserRouter>
       </div>
-      <Navigation />
     </RecipeContext.Provider>
   );
 }
