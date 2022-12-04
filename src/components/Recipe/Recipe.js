@@ -19,14 +19,20 @@ const Recipe = () => {
           <RecipeItem
             key={recipe.id}
             onClick={() => {
-              navigation(`/recipe/recipe-info/${recipe.name}`, {
-                state: {
-                  id: recipe.id,
-                  name: recipe.name,
-                  ingredient: recipe.ingredient,
-                  recipes: recipe.recipes,
+              navigation(
+                `/recipe/recipe-info/${recipe.name}`,
+                {
+                  state: {
+                    id: recipe.id,
+                    name: recipe.name,
+                    ingredient: recipe.ingredient,
+                    recipes: recipe.recipes,
+                  },
                 },
-              });
+                window.scrollTo({
+                  top: 0,
+                })
+              );
             }}
           >
             <img

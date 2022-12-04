@@ -1,9 +1,13 @@
 .recipe {
 }
 
+.recipe .back-icon {
+  margin-right: 6px;
+  font-size: 20px;
+}
+
 .recipe .menu-name {
   display: block;
-  margin-bottom: 40px;
   font-size: 26px;
 }
 
