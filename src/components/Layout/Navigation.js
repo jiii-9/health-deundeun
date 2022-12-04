@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import classes from "./Navigation.module.css";
 
@@ -22,12 +22,6 @@ const Navigation = () => {
         <li className={classes["navigation-item"]}>
           <FontAwesomeIcon
             className={classes["navigation-icon"]}
-            icon={faBars}
-          />
-        </li>
-        <li className={classes["navigation-item"]}>
-          <FontAwesomeIcon
-            className={classes["navigation-icon"]}
             onClick={goHomeHandler}
             icon={faHouse}
           />
@@ -40,6 +34,12 @@ const Navigation = () => {
         </li>
         <li className={classes["navigation-item"]}>
           <span className={classes["navigation-icon"]}></span>
+        </li>
+        <li className={classes["navigation-item"]}>
+          <FontAwesomeIcon
+            className={classes["navigation-icon"]}
+            icon={faUser}
+          />
         </li>
       </ul>
     </nav>
