@@ -27,21 +27,19 @@
   height: 38px;
 }
 
-.main-header .user {
+.main-header .menu {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  background-color: #b8b8b8;
 }
 
-.main-header .user:hover {
+.main-header .menu:hover {
   cursor: pointer;
 }
 
 .main-header .user .user-icon {
   font-size: 24px;
-  color: #fff;
+  color: #333;
 }

@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import SideMenubar from "./SideMenuBar";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import logo from "../../assets/logo.svg";
 import classes from "./MainHeader.module.css";
 
 const MainHeader = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
   const logoClickHandler = () => {
     navigate("/", { replace: true });
+  };
+
+  const sideMenuHandler = () => {
+    setIsOpen(isOpen => !isOpen);
   };
 
   return (
@@ -25,10 +32,16 @@ const MainHeader = () => {
             onClick={logoClickHandler}
           />
         </div>
-        <div className={classes.user}>
-          <FontAwesomeIcon className={classes["user-icon"]} icon={faUser} />
+        <div className={classes.menu}>
+          <FontAwesomeIcon
+            className={classes["menu-icon"]}
+            onClick={sideMenuHandler}
+            icon={faBars}
+          />
         </div>
       </div>
+
+      {isOpen ? <SideMenubar isOpen={isOpen} onFlip={sideMenuHandler} /> : null}
     </header>
   );
 };
