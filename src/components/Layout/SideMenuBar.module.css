@@ -1,0 +1,75 @@
+.sidemenu {
+  font-family: "Noto Sans KR", sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  color: #333;
+  background-color: rgb(254, 254, 254);
+  z-index: 9;
+}
+
+.sidemenu > .inner {
+  margin: 6px;
+}
+
+.sidemenu .category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 78px;
+}
+
+.sidemenu .category .category-title {
+  font-size: 20px;
+}
+
+.sidemenu .category .xmark-icon {
+}
+
+.sidemenu .category-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.sidemenu .category-wrapper .category-name {
+  position: relative;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+}
+
+.sidemenu .category-wrapper .category-name::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #d9d9d9;
+}
+
+.sidemenu .category-wrapper .category-list {
+}
+
+.sidemenu .category-wrapper .category-list .category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  font-size: 12px;
+  line-height: 40px;
+}
+
+.sidemenu .category-wrapper .category-list .category-item .item-name {
+}
+
+.sidemenu .category-wrapper .category-list .category-item .item-icon {
+}
+
+.sidemenu .blank {
+  width: 100%;
+  height: 8px;
+  background-color: #d9d9d9;
+}
