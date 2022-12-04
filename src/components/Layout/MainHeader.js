@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import SideMenubar from "./SideMenuBar";
+import SideMenu from "./SideMenu/SideMenu";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -41,7 +41,7 @@ const MainHeader = () => {
         </div>
       </div>
 
-      {isOpen ? <SideMenubar isOpen={isOpen} onFlip={sideMenuHandler} /> : null}
+      {isOpen ? <SideMenu isOpen={isOpen} onFlip={sideMenuHandler} /> : null}
     </header>
   );
 };

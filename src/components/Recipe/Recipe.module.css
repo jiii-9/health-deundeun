@@ -28,5 +28,6 @@
 .recipe .recipe-list .recipe-name {
   display: inline-block;
   margin: 0 8px 8px 8px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
 }

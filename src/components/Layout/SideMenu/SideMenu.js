@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-import classes from "./SideMenuBar.module.css";
+import classes from "./SideMenu.module.css";
 
 const SideMenubar = props => {
   let isOpen = props.isOpen;
