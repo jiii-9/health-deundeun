@@ -9,8 +9,10 @@ const Input = props => {
 
   const searchItemHandler = e => {
     setSearchItem(e.target.value);
-    props.onChange(searchItem);
   };
+
+  props.onChange(searchItem); // Form과 양방향 바인딩하기 위한 함수 => input 입력값을 인자로 넣어서 보내준다.
+  console.log(searchItem);
 
   return (
     <div className={classes.input}>
@@ -22,7 +24,11 @@ const Input = props => {
         placeholder="재료를 입력하세요"
         onChange={searchItemHandler}
       />
-      <button type="button" onClick={props.onMove}>
+      <button
+        className={classes["search-btn"]}
+        type="button"
+        onClick={props.onMove}
+      >
         검색
       </button>
     </div>
