@@ -1,8 +1,11 @@
-import React from "react";
-import ResultItem from "../Result/ResultItem";
+import React, { Fragment } from "react";
+import ResultList from "../Result/ResultList";
 
 const Result = () => {
-  return <ResultItem />;
+  return;
+  <Fragment>
+    <ResultList />;
+  </Fragment>;
 };
 
 export default Result;

@@ -1,11 +1,11 @@
-import React from "react";
-import RecipeInfo from "../Recipe/RecipeInfo";
+import React, { Fragment } from "react";
+import RecipeManual from "../Recipe/RecipeManual";
 
 const RecipeInfoPage = () => {
   return (
-    <>
-      <RecipeInfo />
-    </>
+    <Fragment>
+      <RecipeManual />
+    </Fragment>
   );
 };
 
