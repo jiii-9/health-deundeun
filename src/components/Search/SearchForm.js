@@ -9,9 +9,10 @@ const SearchForm = () => {
   const [enteredSearchItem, setEnteredSearchItem] = useState("");
 
   const extendSearchItemHandler = enteredItem => {
+    // input에서 받아온 인자를 enteredSearchItem에 넣어줌
     setEnteredSearchItem(enteredItem);
-    console.log(enteredSearchItem);
   };
+  console.log(enteredSearchItem);
 
   const moveResultHandler = () => {
     navigate(`/result/${enteredSearchItem}`);
@@ -19,15 +20,19 @@ const SearchForm = () => {
 
   const submitHandler = event => {
     event.preventDefault();
-    moveResultHandler();
-    console.log("form submitted ✅");
+
+    if (enteredSearchItem.length === 0) {
+      window.confirm("재료를 입력하세요🥬");
+    } else {
+      moveResultHandler(); // result 페이지로 이동
+    }
   };
 
   return (
     <div className="inner">
       <span className={classes["search-title"]}>오늘도 건강하게!</span>
       <form className={classes["search-form"]} onSubmit={submitHandler}>
-        <Input onChange={extendSearchItemHandler} onMove={moveResultHandler} />
+        <Input onChange={extendSearchItemHandler} onMove={submitHandler} />
       </form>
     </div>
   );
