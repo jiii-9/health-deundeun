@@ -62,6 +62,10 @@
   line-height: 40px;
 }
 
+.sidemenu .category-wrapper .category-list .category-item:hover {
+  cursor: pointer;
+}
+
 .sidemenu .category-wrapper .category-list .category-item .item-name {
 }
 
