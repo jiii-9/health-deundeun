@@ -1,0 +1,41 @@
+.recipe {
+}
+
+.recipe .back-icon {
+  margin-right: 6px;
+  font-size: 20px;
+}
+
+.recipe .menu-name {
+  display: block;
+  font-size: 26px;
+}
+
+.recipe .recipe-wrapper {
+  margin: 0 8px;
+}
+
+.recipe .recipe-wrapper .menu-material-title {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.recipe .recipe-wrapper .menu-material {
+  margin-bottom: 40px;
+}
+
+.recipe .recipe-wrapper .menu-item {
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.recipe .recipe-wrapper .menu-item .recipe-image {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+
+.recipe .recipe-wrapper .menu-item .recipe-des {
+  margin: 0 5%;
+}
