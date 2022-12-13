@@ -5,7 +5,7 @@ import { faXmark, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import classes from "./SideMenu.module.css";
 
-const SideMenubar = props => {
+const SideMenu = props => {
   let isOpen = props.isOpen;
   const closeMenuHandler = () => {
     props.onFlip(isOpen => !isOpen);
@@ -76,4 +76,4 @@ const SideMenubar = props => {
   );
 };
 
-export default SideMenubar;
+export default SideMenu;
