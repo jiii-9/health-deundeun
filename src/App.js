@@ -1,36 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/page/Home";
 import RecipeInfoPage from "./components/page/RecipeInfoPage";
+import MainHeader from "./components/Layout/MainHeader";
 import Navigation from "./components/Layout/Navigation";
+import Result from "./components/page/Result";
+
+import Material from "./components/store/Material";
 
 import "./App.css";
-import MainHeader from "./components/Layout/MainHeader";
 
 export const RecipeContext = React.createContext();
 
 function App() {
   const [recipeData, setRecipeData] = useState([]);
 
-  // const MATERIAL_API_KEY =
-  //   "JFTV7vhRItec0ldhlHpK1L9oaCQKJGWYqzw54%2F6Kfjo0Dor9L%2BwFgvS%2FmBbVM3roQZf1q8yCiQoRqFbP2dEBfQ%3D%3D";
-  // const material_url = `http://apis.data.go.kr/1471000/FoodNtrIrdntInfoService1/getFoodNtrItdntList1?ServiceKey=${MATERIAL_API_KEY}&desc_kor=양파&type=json`;
-
-  // const getMaterialData = async () => {
-  //   const response = await fetch(material_url);
-  //   const data = await response.json();
-
-  //   console.log("data", data);
-  // };
-
-  // Recipe data api
-
+  // Recipe data API
   const RECIPE_API_KEY = "ec08a6953db24a9dbfbb";
   const recipe_url = `http://openapi.foodsafetykorea.go.kr/api/${RECIPE_API_KEY}/COOKRCP01/json/1/100/RCP_NM="샐러드"`;
-
-  useEffect(() => {
-    fetchRecipeHandler();
-  }, []);
 
   const fetchRecipeHandler = async () => {
     const response = await fetch(recipe_url);
@@ -72,26 +59,34 @@ function App() {
     setRecipeData(transformedRecipe);
   };
 
+  useEffect(() => {
+    fetchRecipeHandler();
+  }, []);
+
   if (recipeData.length === 0) {
-    return null;
+    return;
   }
+
   console.log(recipeData);
 
   return (
     <RecipeContext.Provider value={{ recipeData }}>
-      <div className="inner">
-        <BrowserRouter>
-          <MainHeader />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/recipe/recipe-info/:RCP_NM"
-              element={<RecipeInfoPage />}
-            />
-          </Routes>
-          <Navigation />
-        </BrowserRouter>
-      </div>
+      <Material>
+        <div className="inner">
+          <BrowserRouter>
+            <MainHeader />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/recipe/recipe-info/:RCP_NM"
+                element={<RecipeInfoPage />}
+              />
+              <Route path="/result/:DESC_KOR" element={<Result />} />
+            </Routes>
+            <Navigation />
+          </BrowserRouter>
+        </div>
+      </Material>
     </RecipeContext.Provider>
   );
 }
