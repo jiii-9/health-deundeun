@@ -6,7 +6,7 @@ import classes from "./Recipe.module.css";
 import RecipeItem from "./RecipeItem";
 
 const Recipe = () => {
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   const recipeCtx = useContext(RecipeContext);
   const recipes = recipeCtx.recipeData;
 
@@ -19,7 +19,7 @@ const Recipe = () => {
           <RecipeItem
             key={recipe.id}
             onClick={() => {
-              navigation(
+              navigate(
                 `/recipe/recipe-info/${recipe.name}`,
                 {
                   state: {
