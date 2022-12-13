@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import ResultItem from "../Result/ResultItem";
+import ResultList from "../Result/ResultList";
 
 const Result = () => {
   return (
     <Fragment>
-      <ResultItem />
+      <ResultList />
     </Fragment>
   );
 };
