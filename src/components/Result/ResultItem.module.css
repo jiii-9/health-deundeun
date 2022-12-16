@@ -1,0 +1,43 @@
+.result-item {
+  display: grid;
+  grid-template-rows: 0.8fr 2fr;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #fff;
+}
+
+.result-item .food-name {
+  margin: auto 0;
+  font-weight: 600;
+}
+
+.result-item .result-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.result-item .result-info .item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  background-color: rgb(227, 242, 227);
+}
+
+.result-item .result-info .item-info .nutrient-name {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.result-item .result-info .item-info .amount {
+  font-size: 14px;
+}
