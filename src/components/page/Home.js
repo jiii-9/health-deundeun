@@ -5,8 +5,10 @@ import SearchForm from "../Search/SearchForm";
 const Home = () => {
   return (
     <Fragment>
-      <SearchForm />
-      <Recipe />
+      <div className="inner">
+        <SearchForm />
+        <Recipe />
+      </div>
     </Fragment>
   );
 };
