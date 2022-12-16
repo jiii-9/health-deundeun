@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/page/Home";
 import RecipeInfoPage from "./components/page/RecipeInfoPage";
 import MainHeader from "./components/Layout/MainHeader";
 import Navigation from "./components/Layout/Navigation";
 import Result from "./components/page/Result";
+import Like from "./components/page/Like";
 
 import Material from "./components/store/Material";
 
@@ -72,20 +73,19 @@ function App() {
   return (
     <RecipeContext.Provider value={{ recipeData }}>
       <Material>
-        <div className="inner">
-          <BrowserRouter>
-            <MainHeader />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route
-                path="/recipe/recipe-info/:RCP_NM"
-                element={<RecipeInfoPage />}
-              />
-              <Route path="/result/:DESC_KOR" element={<Result />} />
-            </Routes>
-            <Navigation />
-          </BrowserRouter>
-        </div>
+        <BrowserRouter>
+          <MainHeader />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/recipe/recipe-info/:RCP_NM"
+              element={<RecipeInfoPage />}
+            />
+            <Route path="/result/:searchValue" element={<Result />} />
+            <Route path="/like" element={<Like />} />
+          </Routes>
+          <Navigation />
+        </BrowserRouter>
       </Material>
     </RecipeContext.Provider>
   );
