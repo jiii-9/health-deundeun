@@ -6,10 +6,15 @@
   background-color: #fff;
 }
 
-.navigation .navigation-list {
+.navigation > .inner {
+  width: 355px;
   height: 100%;
+  margin: 0 auto;
+}
+
+.navigation .navigation-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -19,6 +24,10 @@
   align-items: center;
   width: 38px;
   height: 38px;
+}
+
+.navigation .navigation-list .navigation-item:hover {
+  cursor: pointer;
 }
 
 .navigation .navigation-list .navigation-item .navigation-icon {
