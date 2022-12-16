@@ -8,6 +8,12 @@
   color: #333;
 }
 
+.inner {
+  position: relative;
+  width: 355px;
+  margin: 0 auto;
+}
+
 li {
   list-style: none;
 }
@@ -18,10 +24,4 @@ span {
 
 img {
   display: block;
-}
-
-.inner {
-  position: relative;
-  width: 355px;
-  margin: 0 auto;
 }
