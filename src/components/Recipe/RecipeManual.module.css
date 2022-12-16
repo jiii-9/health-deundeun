@@ -1,12 +1,12 @@
-.recipe {
-}
+@import url("https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap");
 
-.recipe .back-icon {
-  margin-right: 6px;
-  font-size: 20px;
+.recipe {
+  padding-top: 20px;
+  background-color: rgb(242, 251, 242);
 }
 
 .recipe .menu-name {
+  font-family: "Sunflower", sans-serif;
   display: block;
   font-size: 26px;
 }
@@ -15,27 +15,41 @@
   margin: 0 8px;
 }
 
-.recipe .recipe-wrapper .menu-material-title {
+.recipe .recipe-wrapper .menu-material-wrapper {
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.recipe .recipe-wrapper .menu-material-wrapper .menu-material-title {
   margin-bottom: 8px;
   font-size: 22px;
 }
 
-.recipe .recipe-wrapper .menu-material {
-  margin-bottom: 40px;
+.recipe .recipe-wrapper .menu-material-wrapper .menu-material {
 }
 
 .recipe .recipe-wrapper .menu-item {
   margin-bottom: 40px;
   overflow: hidden;
+  border-radius: 20px;
+  padding: 30px;
+  background-color: #fff;
 }
 
 .recipe .recipe-wrapper .menu-item .recipe-image {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   margin-bottom: 16px;
   border-radius: 10px;
 }
 
 .recipe .recipe-wrapper .menu-item .recipe-des {
-  margin: 0 5%;
+}
+
+.recipe .recipe-wrapper .heart-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
 }
