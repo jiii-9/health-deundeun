@@ -35,7 +35,9 @@ const MaterialContextProvider = ({ children }) => {
   console.log(materialData);
 
   return (
-    <MaterialContext.Provider value={{ materialData, changeUrlHandler }}>
+    <MaterialContext.Provider
+      value={{ materialData, enteredInputValue, changeUrlHandler }}
+    >
       {children}
     </MaterialContext.Provider>
   );
