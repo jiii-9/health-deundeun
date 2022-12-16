@@ -12,38 +12,40 @@ const Recipe = () => {
 
   return (
     <section className={classes.recipe}>
-      <span className={classes["recipe-title"]}>인기있는 레시피</span>
+      <div className="inner">
+        <span className={classes["recipe-title"]}>인기있는 레시피</span>
 
-      <ul className={classes["recipe-list"]}>
-        {recipes.map(recipe => (
-          <RecipeItem
-            key={recipe.id}
-            onClick={() => {
-              navigate(
-                `/recipe/recipe-info/${recipe.name}`,
-                {
-                  state: {
-                    id: recipe.id,
-                    name: recipe.name,
-                    ingredient: recipe.ingredient,
-                    recipes: recipe.recipes,
+        <ul className={classes["recipe-list"]}>
+          {recipes.map(recipe => (
+            <RecipeItem
+              key={recipe.id}
+              onClick={() => {
+                navigate(
+                  `/recipe/recipe-info/${recipe.name}`,
+                  {
+                    state: {
+                      id: recipe.id,
+                      name: recipe.name,
+                      ingredient: recipe.ingredient,
+                      recipes: recipe.recipes,
+                    },
                   },
-                },
-                window.scrollTo({
-                  top: 0,
-                })
-              );
-            }}
-          >
-            <img
-              className={classes["recipe-image"]}
-              src={`${recipe.mainImage}`}
-              alt="레시피 대표이미지"
-            />
-            <span className={classes["recipe-name"]}>{recipe.name}</span>
-          </RecipeItem>
-        ))}
-      </ul>
+                  window.scrollTo({
+                    top: 0,
+                  })
+                );
+              }}
+            >
+              <img
+                className={classes["recipe-image"]}
+                src={`${recipe.mainImage}`}
+                alt="레시피 대표이미지"
+              />
+              <span className={classes["recipe-name"]}>{recipe.name}</span>
+            </RecipeItem>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 };
