@@ -11,6 +11,10 @@
   font-size: 26px;
 }
 
+.recipe .menu-name:hover {
+  cursor: pointer;
+}
+
 .recipe .recipe-wrapper {
   margin: 0 8px;
 }
