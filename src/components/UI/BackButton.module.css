@@ -2,5 +2,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  border: none;
+  background-color: transparent;
+}
+
+.back .back-icon {
+  margin-right: 6px;
+  font-size: 20px;
 }
