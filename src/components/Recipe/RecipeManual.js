@@ -1,9 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import BackButton from "../UI/BackButton";
+import HeartButton from "../UI/HeartButton";
 
 import classes from "./RecipeManual.module.css";
-import HeartButton from "../UI/HeartButton";
 
 const RecipeManual = () => {
   const { state } = useLocation();
@@ -38,7 +38,7 @@ const RecipeManual = () => {
               )}
             </div>
           ))}
-          <HeartButton />
+          <HeartButton className={classes["heart-icon"]} />
         </div>
       </div>
     </div>
