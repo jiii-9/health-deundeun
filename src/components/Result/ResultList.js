@@ -4,7 +4,6 @@ import ResultItem from "./ResultItem";
 import BackButton from "../UI/BackButton";
 
 import classes from "./ResultList.module.css";
-import HeartButton from "../UI/HeartButton";
 
 const ResultList = () => {
   const MaterialContextProvider = useContext(MaterialContext);
@@ -24,7 +23,6 @@ const ResultList = () => {
             '{enteredValue}' 검색 결과
           </span>
         </BackButton>
-        <HeartButton />
         {dataResultItems.map(item => (
           <div key={item.FOOD_CD}>
             <ResultItem
