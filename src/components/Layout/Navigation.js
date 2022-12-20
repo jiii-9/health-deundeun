@@ -39,7 +39,7 @@ const Navigation = () => {
             />
           </li>
           <li className={classes["navigation-item"]}>
-            <span className={classes["navigation-icon"]}></span>
+            <span className={classes.record}></span>
           </li>
           <li className={classes["navigation-item"]}>
             <FontAwesomeIcon

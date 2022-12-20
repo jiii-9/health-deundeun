@@ -13,6 +13,7 @@
 }
 
 .navigation .navigation-list {
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,5 +34,18 @@
 .navigation .navigation-list .navigation-item .navigation-icon {
   width: 22px;
   height: 22px;
-  color: #2b5926;
+}
+
+.navigation .navigation-list .navigation-item .record {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: 3px solid #999;
+  border-radius: 50%;
+}
+
+.navigation .navigation-list .navigation-item .record:hover {
+  cursor: pointer;
 }
