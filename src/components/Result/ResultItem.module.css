@@ -9,9 +9,34 @@
   background-color: #fff;
 }
 
-.result-item .food-name {
-  margin: auto 0;
+.result-item .wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.result-item .wrapper .food-name {
+  position: absolute;
+  top: 50%;
+  left: 0;
   font-weight: 600;
+  transform: translateY(-50%);
+}
+
+.result-item .wrapper .heart-icon,
+.result-item .wrapper .active-heart {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 20px;
+  transform: translateY(-50%);
+}
+
+.result-item .wrapper .active-heart path {
+  color: red;
+}
+
+.result-item .wrapper .heart-icon:hover {
+  cursor: pointer;
 }
 
 .result-item .result-info {
