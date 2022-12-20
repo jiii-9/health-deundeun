@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import BackButton from "../UI/BackButton";
 import HeartButton from "../UI/HeartButton";
@@ -7,6 +7,11 @@ import classes from "./RecipeManual.module.css";
 
 const RecipeManual = () => {
   const { state } = useLocation();
+  const [isClicked, setIsClicked] = useState(false);
+
+  const clickHeartHandler = () => {
+    setIsClicked(!isClicked);
+  };
 
   console.log(state.recipes);
 
@@ -16,6 +21,14 @@ const RecipeManual = () => {
         <BackButton>
           <h2 className={classes["menu-name"]}>{state.name}</h2>
         </BackButton>
+
+        <HeartButton
+          className={
+            isClicked ? classes["active-heart"] : classes["heart-icon"]
+          }
+          isClicked={isClicked}
+          onClick={clickHeartHandler}
+        />
 
         <div className={classes["recipe-wrapper"]}>
           <div className={classes["menu-material-wrapper"]}>
@@ -38,7 +51,6 @@ const RecipeManual = () => {
               )}
             </div>
           ))}
-          <HeartButton className={classes["heart-icon"]} />
         </div>
       </div>
     </div>

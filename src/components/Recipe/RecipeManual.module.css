@@ -15,6 +15,18 @@
   cursor: pointer;
 }
 
+.recipe .heart-icon,
+.recipe .active-heart {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  font-size: 20px;
+}
+
+.recipe .active-heart path {
+  color: red;
+}
+
 .recipe .recipe-wrapper {
   margin: 0 8px;
 }
@@ -40,11 +52,6 @@
   border-radius: 20px;
   padding: 30px;
   background-color: #fff;
-}
-
-.recipe .recipe-wrapper .menu-material-wrapper .heart-icon {
-  top: 0;
-  right: 0;
 }
 
 .recipe .recipe-wrapper .menu-item .recipe-image {
