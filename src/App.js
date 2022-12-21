@@ -60,6 +60,11 @@ function App() {
     setRecipeData(transformedRecipe);
   };
 
+  // 레시피 데이터 랜덤으로 뿌려주는 함수
+  const shuffle = array => {
+    array.sort(() => Math.random() - 0.5);
+  };
+
   useEffect(() => {
     fetchRecipeHandler();
   }, []);
@@ -68,6 +73,7 @@ function App() {
     return;
   }
 
+  shuffle(recipeData);
   console.log(recipeData);
 
   return (
