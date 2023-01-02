@@ -20,6 +20,10 @@ const Navigation = () => {
     navigate("/like", { replace: true });
   };
 
+  const goLoginHandler = () => {
+    navigate("/login");
+  };
+
   return (
     <nav className={classes.navigation}>
       <div className={classes.inner}>
@@ -44,6 +48,7 @@ const Navigation = () => {
           <li className={classes["navigation-item"]}>
             <FontAwesomeIcon
               className={classes["navigation-icon"]}
+              onClick={goLoginHandler}
               icon={faUser}
             />
           </li>
