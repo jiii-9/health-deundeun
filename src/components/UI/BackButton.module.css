@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 90%;
   margin-bottom: 30px;
   border: none;
   background-color: transparent;
@@ -9,5 +10,11 @@
 
 .back .back-icon {
   margin-right: 6px;
+  padding: 8px;
+  padding-left: 0;
   font-size: 20px;
+}
+
+.back .back-icon:hover {
+  cursor: pointer;
 }
