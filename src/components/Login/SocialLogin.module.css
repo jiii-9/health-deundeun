@@ -1,0 +1,38 @@
+.social {
+  margin-bottom: 30px;
+}
+
+.social .social-kakao,
+.social .social-google {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.social .social-kakao {
+  margin-bottom: 8px;
+  background-color: #fff38b;
+  transition: all 0.3s ease-in-out;
+}
+
+.social .social-kakao:hover {
+  background-color: #edd700;
+  cursor: pointer;
+}
+
+.social .social-google {
+  background-color: rgb(238, 238, 238);
+  transition: all 0.3s ease-in-out;
+}
+
+.social .social-google:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: rgb(163, 163, 163);
+}
+
+.social .social-icon {
+  margin-right: 8px;
+}
