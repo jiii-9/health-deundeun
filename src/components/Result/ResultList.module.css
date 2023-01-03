@@ -15,3 +15,20 @@
 .result-list .result-title:hover {
   cursor: pointer;
 }
+
+.result-list .heart-icon,
+.result-list .active-heart {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 20px;
+  transform: translateY(-50%);
+}
+
+.result-list .active-heart path {
+  color: red;
+}
+
+.result-list .heart-icon:hover {
+  cursor: pointer;
+}
