@@ -6,6 +6,7 @@ import MainHeader from "./components/Layout/MainHeader";
 import Navigation from "./components/Layout/Navigation";
 import Result from "./components/page/Result";
 import Like from "./components/page/Like";
+import Sign from "./components/page/Sign";
 
 import Material from "./components/store/Material";
 
@@ -89,6 +90,7 @@ function App() {
             />
             <Route path="/result/:searchValue" element={<Result />} />
             <Route path="/like" element={<Like />} />
+            <Route path="/login" element={<Sign />} />
           </Routes>
           <Navigation />
         </BrowserRouter>
