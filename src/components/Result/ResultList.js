@@ -11,9 +11,18 @@ const ResultList = () => {
   const dataResultItems = receivedData.row;
   const enteredValue = MaterialContextProvider.enteredInputValue;
 
-  if (receivedData.total_count === "0") {
-    return null;
+  if (dataResultItems === undefined) {
+    return;
   }
+
+  // 중복되는 검색 결과 제거하는 함수
+  const duplicateWordFilter = dataResultItems.filter(
+    (arr, index, callback) =>
+      index === callback.findIndex(item => item.DESC_KOR === arr.DESC_KOR)
+  );
+
+  console.log(duplicateWordFilter);
+  console.log(dataResultItems);
 
   return (
     <section className={classes["result-list"]}>
@@ -23,9 +32,12 @@ const ResultList = () => {
             '{enteredValue}' 검색 결과
           </span>
         </BackButton>
-        {dataResultItems.map(item => (
-          <div key={item.FOOD_CD}>
+
+        <div>
+          {duplicateWordFilter.map(item => (
             <ResultItem
+              id={item.FOOD_CD}
+              idx={item.FOOD_CD}
               name={item.DESC_KOR}
               kcal={item.NUTR_CONT1}
               carbohydrate={item.NUTR_CONT2}
@@ -36,8 +48,8 @@ const ResultList = () => {
               cholesterol={item.NUTR_CONT7}
               transFat={item.NUTR_CONT9}
             />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
