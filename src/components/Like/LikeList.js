@@ -1,13 +1,25 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import LikeItem from "./LikeItem";
 
+import classes from "./LikeList.module.css";
+
 const LikeList = () => {
+  let state = useSelector(state => state);
+  const likeList = state.like;
+
   return (
-    <div>
-      <h1>Like List</h1>
-      <LikeItem />
-    </div>
+    <section className={classes["like-list"]}>
+      {likeList.map(item => (
+        <LikeItem
+          key={item.id}
+          id={item.id}
+          name={item.name}
+          nutrient={item.nutrientList}
+        />
+      ))}
+    </section>
   );
 };
 
