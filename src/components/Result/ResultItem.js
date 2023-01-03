@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import HeartButton from "../UI/HeartButton";
+import React from "react";
 
 import classes from "./ResultItem.module.css";
 
 const ResultItem = ({
+  idx,
   name,
   kcal,
   carbohydrate,
@@ -49,24 +49,10 @@ const ResultItem = ({
     },
   ];
 
-  const [isClicked, setIsClicked] = useState(false);
-
-  const clickHeartHandler = () => {
-    setIsClicked(!isClicked);
-    console.log(isClicked);
-  };
-
   return (
     <div className={classes["result-item"]}>
       <div className={classes.wrapper}>
         <span className={classes["food-name"]}>{name}</span>
-        <HeartButton
-          className={
-            isClicked ? classes["active-heart"] : classes["heart-icon"]
-          }
-          isClicked={isClicked}
-          onClick={clickHeartHandler}
-        />
       </div>
       <div className={classes["result-info"]}>
         {nutrientList.map((nutrientItem, idx) => (
