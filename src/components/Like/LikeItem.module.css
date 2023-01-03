@@ -1,0 +1,60 @@
+.like-item {
+  display: grid;
+  grid-template-rows: 0.8fr 2fr;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #fff;
+}
+
+.like-item .item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.like-item .item-header .food-name {
+  display: inline-block;
+  width: 90%;
+  font-weight: 600;
+  color: #333;
+}
+
+.like-item .item-header .xmark-icon {
+  font-size: 18px;
+  color: #333;
+}
+
+.like-item .item-header .xmark-icon:hover {
+  cursor: pointer;
+}
+
+.like-item .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.like-item .wrapper .item-nutrient {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  background-color: rgb(227, 242, 227);
+}
+
+.like-item .wrapper .item-nutrient .nutrient-name {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.like-item .wrapper .item-nutrient .nutrient-mark {
+  font-size: 14px;
+}
