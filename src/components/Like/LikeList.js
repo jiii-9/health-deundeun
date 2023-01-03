@@ -9,6 +9,12 @@ const LikeList = () => {
   let state = useSelector(state => state);
   const likeList = state.like;
 
+  if (likeList.length === 0) {
+    return (
+      <span className={classes["like-none"]}>좋아요 내역이 없습니다.</span>
+    );
+  }
+
   return (
     <section className={classes["like-list"]}>
       {likeList.map(item => (

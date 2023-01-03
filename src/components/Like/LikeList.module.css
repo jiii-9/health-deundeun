@@ -1,3 +1,9 @@
+.like-none {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .like-list {
   padding-top: 20px;
   background-color: rgb(227, 242, 227);
