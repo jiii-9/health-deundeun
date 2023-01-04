@@ -36,7 +36,7 @@ const ResultList = () => {
         <div>
           {duplicateWordFilter.map(item => (
             <ResultItem
-              id={item.FOOD_CD}
+              key={item.FOOD_CD}
               idx={item.FOOD_CD}
               name={item.DESC_KOR}
               kcal={item.NUTR_CONT1}
