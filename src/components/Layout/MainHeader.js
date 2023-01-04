@@ -39,9 +39,9 @@ const MainHeader = () => {
             icon={faBars}
           />
         </div>
-      </div>
 
-      {isOpen ? <SideMenu isOpen={isOpen} onFlip={sideMenuHandler} /> : null}
+        {isOpen ? <SideMenu isOpen={isOpen} onFlip={sideMenuHandler} /> : null}
+      </div>
     </header>
   );
 };
