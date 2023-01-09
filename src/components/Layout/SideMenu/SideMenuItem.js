@@ -17,8 +17,8 @@ const SideMenuItem = ({ id, name, detailMenu }) => {
 
   return (
     <Fragment>
-      <li className={classes["category-item"]} onClick={itemFlipHandler}>
-        <div>
+      <li className={classes["category-item"]}>
+        <div onClick={itemFlipHandler}>
           <span className={classes["item-name"]}>{name}</span>
           <FontAwesomeIcon
             className={classes["item-icon"]}
